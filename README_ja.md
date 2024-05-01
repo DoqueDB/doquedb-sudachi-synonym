@@ -117,8 +117,8 @@ $ export LD_LIBRARY_PATH=`pwd`/../tools/bin:$LD_LIBRARY_PATH
 $ make -f ../tools/make/make-norm-sudachi
 ```
 
-以上により、work/nworkの下にexpStrStrWrd-sudachi.dic, expStrStrApp-sudachi.dicが  
-作成されます。これらのファイルをDoqueDBの異表記正規化リソースであるunadic/normの下に  
+以上により、work/nworkの下にexpStrStrWrd-sudachi.dic, expStrStrApp-sudachi.dicが作成  
+されます。これらのファイルをDoqueDBの異表記正規化リソースであるunadic/normの下に  
 expStrStrWrd.dic, expStrStrApp.dicとして置くことにより、異表記展開辞書として  
 利用することができます。
 
