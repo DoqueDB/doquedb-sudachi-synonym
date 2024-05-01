@@ -92,8 +92,6 @@ in DoqueDB for details.
 * gcc 4.8 or gcc 11.4
 * perl-open
 
-*****
-
 2. Download the latest
 [synonyms.txt](https://github.com/WorksApplications/SudachiDict/blob/develop/src/main/text/synonyms.txt)
 as a raw file from the Sudachi synonym dictionary  
