@@ -2,23 +2,24 @@
 
 Sudachi同義語辞書 for DoqueDBは、
 [ワークス徳島人工知能NLP研究所](https://worksapplications.github.io/Sudachi/)が
-公開しているSudachi同義語辞書ソース(v20240408)を、DoqueDBの異表記展開辞書としてビルドしたものです。
+公開しているSudachi  
+同義語辞書ソース(v20240408)を、DoqueDBの異表記展開辞書としてビルドしたものです。  
 DoqueDBのSQLから同義語検索を行うために使用することができます。  
-Sudachi同義語辞書については以下を参照してください。
+Sudachi同義語辞書については以下を参照してください。  
   [SudachiDict/docs/synonyms.md](https://github.com/WorksApplications/SudachiDict/blob/develop/docs/synonyms.md)
 
 ## 使ってみる
 
 Sudachi同義語辞書を使った同義語検索の例を示します。  
-あらかじめDoqueDBがインストールされ、 
-青空文庫の一部のデータを使ったサンプルデータベースが作成されている
+あらかじめDoqueDBがインストールされ、 青空文庫の一部のデータを使ったサンプル
+データベースが作成されている  
 (DoqueDBの[README_ja.md](https://github.com/DoqueDB/doquedb/blob/master/README_ja.md)
-にある「サンプルの実行」で./setup.shまでが実行されている)ものとします。
+にある「サンプルの実行」で  
+./setup.shまでが実行されている)ものとします。
 
 ### インストール
 
-dictディレクトリにある異表記展開辞書をDoqueDBの実行環境にコピーし、
-DoqueDBを再起動します。
+dictディレクトリにある異表記展開辞書をDoqueDBの実行環境にコピーし、DoqueDBを再起動します。
 (元からある異表記展開辞書はサンプルのため、残しておく必要はありません。)
 
 ```
@@ -29,7 +30,7 @@ DoqueDBを再起動します。
 
 ### 検索する
 
-青空文庫の作品本文から「前途」とその同義語を検索してみましょう。
+青空文庫の作品本文から「前途」とその同義語を検索してみましょう。  
 異表記展開のためにEXPAND\_SYNONYM関数を使っています。  
 以下のクエリをsample.sqlに保存します。
 
@@ -60,8 +61,8 @@ $ /var/lib/DoqueDB/bin/sqli -remote localhost 54321 -user root \
 $ 
 ```
 
-「前途」の同義語「未来」「行く末」などは、Sudachi同義語辞書の以下のエントリで展開されています。
-「將來」はDoqueDBの正規化により「将来」として検索できるようになっています。
+「前途」の同義語「未来」「行く末」などは、Sudachi同義語辞書の以下のエントリで展開  
+されています。「將來」はDoqueDBの正規化で「将来」として検索できるようになっています。
 
 ```
 001051,1,0,1,0,0,0,(時間),前途,,
@@ -91,9 +92,10 @@ Sudachi同義語辞書 for DoqueDBを最新のソースからビルドする方�
 
 2. Sudachi同義語辞書のサイトから最新の
 [synonyms.txt](https://github.com/WorksApplications/SudachiDict/blob/develop/src/main/text/synonyms.txt)
-をRaw fileとしてダウンロードし、una/1.0/resource/src-data/normに置いてください。
+をRaw fileとしてダウンロードし、  
+una/1.0/resource/src-data/normに置いてください。
 
-3. 辞書のビルドに必要なヘッダファイルを配置します。
+3. 辞書のビルドに必要なヘッダファイルを配置します。  
 gcc 4.8を使う場合はO114-64をO48-64と読み替えてください。
 
 ```
@@ -115,18 +117,17 @@ $ export LD_LIBRARY_PATH=`pwd`/../tools/bin:$LD_LIBRARY_PATH
 $ make -f ../tools/make/make-norm-sudachi
 ```
 
-以上により、work/nworkの下にexpStrStrWrd-sudachi.dic,
-expStrStrApp-sudachi.dicが作成されます。
-これらのファイルをDoqueDBの異表記正規化リソースである
-unadic/normの下にexpStrStrWrd.dic, expStrStrApp.dicとして置くことにより、
-異表記展開辞書として利用することができます。
+以上により、work/nworkの下にexpStrStrWrd-sudachi.dic, expStrStrApp-sudachi.dicが  
+作成されます。これらのファイルをDoqueDBの異表記正規化リソースであるunadic/normの下に  
+expStrStrWrd.dic, expStrStrApp.dicとして置くことにより、異表記展開辞書として  
+利用することができます。
 
 ## ライセンス
 
-Sudachi同義語辞書 for DoqueDBは、Sudachiと同じくApache License 2.0で公開されています。
+Sudachi同義語辞書 for DoqueDBは、Sudachiと同じくApache License 2.0で公開されています。  
 著作権情報についてはLICENSE/NOTICE.txtをご覧ください。
 
 ## 謝辞
 
-自然言語処理の分野で多くの有益かつ高度な資源を公開されている
-ワークス徳島人工知能NLP研究所に感謝の意を表します。
+自然言語処理の分野で多くの有益かつ高度な資源を公開されているワークス徳島人工知能NLP  
+研究所に感謝の意を表します。

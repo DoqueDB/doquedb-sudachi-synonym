@@ -1,24 +1,25 @@
 # Sudachi synonym dictionary for DoqueDB
 
-The Sudachi synonym dictionary for DoqueDB is built from the Sudachi synonym
-dictionary source (v20240408) published by WAP Tokushima Laboratory of AI and NLP,
-as a variant expansion dictionary for DoqueDB.
+The Sudachi synonym dictionary for DoqueDB is built from the Sudachi synonym  
+dictionary source (v20240408) published by WAP Tokushima Laboratory of AI and NLP,  
+as a variant expansion dictionary for DoqueDB.  
 It can be used to perform synonym searches from DoqueDB SQL.  
-For more information on the Sudachi synonym dictionary, see:
+For more information on the Sudachi synonym dictionary, see:  
   [SudachiDict/docs/synonyms.md](https://github.com/WorksApplications/SudachiDict/blob/develop/docs/synonyms.md)
 
 ## Search example
 
 Here is an example of synonym search using the Sudachi synonym dictionary.  
-It is assumed that DoqueDB has been installed and a sample database using partial
+It is assumed that DoqueDB has been installed and a sample database using partial  
 data from the Aozora Bunko has been created in advance
-(the "Execute examples" in [README.md](https://github.com/DoqueDB/doquedb/blob/master/README.md)
+(the "Execute examples"  
+in [README.md](https://github.com/DoqueDB/doquedb/blob/master/README.md)
 of DoqueDB has been executed up to ./setup.sh).
 
 ### Installation
 
-Copy the variant expansion dictionaries in the "dict" directory to the DoqueDB
-execution environment and restart DoqueDB. (You don't need to keep the original
+Copy the variant expansion dictionaries in the "dict" directory to the DoqueDB  
+execution environment and restart DoqueDB. (You don't need to keep the original  
 dictionaries in the destination as they are for sample purposes.)
 
 ```
@@ -29,7 +30,7 @@ dictionaries in the destination as they are for sample purposes.)
 
 ### Running search
 
-Let's search for "前途(future)" and its synonyms in the text of Aozora Bunko's works.
+Let's search for "前途(future)" and its synonyms in the text of Aozora Bunko's works.  
 The EXPAND\_SYNONYM function is used for variant expansion.  
 Save the query below to sample.sql.
 
@@ -60,8 +61,8 @@ $ /var/lib/DoqueDB/bin/sqli -remote localhost 54321 -user root \
 $ 
 ```
 
-The synonyms of "前途" such as "未来" and "行く末" are expanded by the following
-source entries of the Sudachi synonym dictionary.
+The synonyms of "前途" such as "未来" and "行く末" are expanded by the following  
+source entries of the Sudachi synonym dictionary.  
 The word "將來" can be searched as "将来" using DoqueDB normalization.
 
 ```
@@ -77,13 +78,13 @@ The word "將來" can be searched as "将来" using DoqueDB normalization.
 
 ## Building procedure
 
-This section explains how to build the Sudachi synonym dictionary for DoqueDB
+This section explains how to build the Sudachi synonym dictionary for DoqueDB  
 from the latest sources.
 
 ### Preparation
 
-1. Please prepare the following materials.
-Work will be done in the DoqueDB source environment.
+1. Please prepare the following materials.  
+Work will be done in the DoqueDB source environment.  
 See [BUILDING\_PROCEDURE\_ja.md](https://github.com/DoqueDB/doquedb/blob/master/BUILDING_PROCEDURE_ja.md)
 in DoqueDB for details.
 
@@ -91,12 +92,14 @@ in DoqueDB for details.
 * gcc 4.8 or gcc 11.4
 * perl-open
 
+*****
+
 2. Download the latest
 [synonyms.txt](https://github.com/WorksApplications/SudachiDict/blob/develop/src/main/text/synonyms.txt)
-as a raw file from the Sudachi synonym dictionary site and place it in
-una/1.0/resource/src-data/norm.
+as a raw file from the Sudachi synonym dictionary  
+site and place it in una/1.0/resource/src-data/norm.
 
-3. Place the header files needed to build the dictionary.
+3. Place the header files needed to build the dictionary.  
 When using gcc 4.8, read O114-64 as O48-64.
 
 ```
@@ -118,20 +121,19 @@ $ export LD_LIBRARY_PATH=`pwd`/../tools/bin:$LD_LIBRARY_PATH
 $ make -f ../tools/make/make-norm-sudachi
 ```
 
-With the above steps, expStrStrWrd-sudachi.dic and expStrStrApp-sudachi.dic
-are created under work/nwork.
-By placing these files as expStrStrWrd.dic and expStrStrApp.dic under unadic/norm,
-the DoqueDB normalizer resource directory, they can be used as a variant expansion
+With the above steps, expStrStrWrd-sudachi.dic and expStrStrApp-sudachi.dic  
+are created under work/nwork.  By placing these files as expStrStrWrd.dic and  
+expStrStrApp.dic under unadic/norm, the DoqueDB normalizer resource directory,  
+they can be used as a variant expansion  
 dictionary.
 
 ## Licenses
 
-The Sudachi synonym dictionary for DoqueDB is published under
-the Apache License 2.0 like Sudachi.  
-For copyright information, see LICENSE/NOTICE.txt.
+The Sudachi synonym dictionary for DoqueDB is published under the Apache License  
+2.0 like Sudachi.  For copyright information, see LICENSE/NOTICE.txt.
 
 ## Acknowledgment
 
-We would like to express our gratitude to WAP Tokushima Laboratory of AI and NLP,
-which has published many useful and advanced resources in the field of natural
+We would like to express our gratitude to WAP Tokushima Laboratory of AI and NLP,  
+which has published many useful and advanced resources in the field of natural  
 language processing.
