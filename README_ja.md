@@ -11,16 +11,16 @@ Sudachi同義語辞書については以下を参照してください。
 ## 使ってみる
 
 Sudachi同義語辞書を使った同義語検索の例を示します。  
-あらかじめDoqueDBがインストールされ、 青空文庫の一部のデータを使ったサンプル
-データベースが作成されている  
+あらかじめDoqueDBがインストールされ、 青空文庫の一部のデータを使ったサンプル  
+データベースが作成されている
 (DoqueDBの[README_ja.md](https://github.com/DoqueDB/doquedb/blob/master/README_ja.md)
 にある「サンプルの実行」で  
 ./setup.shまでが実行されている)ものとします。
 
 ### インストール
 
-dictディレクトリにある異表記展開辞書をDoqueDBの実行環境にコピーし、DoqueDBを再起動します。
-(元からある異表記展開辞書はサンプルのため、残しておく必要はありません。)
+dictディレクトリにある異表記展開辞書をDoqueDBの実行環境にコピーし、DoqueDBを再起動  
+します。(元からある異表記展開辞書はサンプルのため、残しておく必要はありません。)
 
 ```
 # cp dict/expStrStrWrd-Sudachi.dic /var/lib/DoqueDB/data/unadic/norm/expStrStrWrd.dic
@@ -81,7 +81,7 @@ Sudachi同義語辞書 for DoqueDBを最新のソースからビルドする方�
 
 ### 準備
 
-1. 以下を用意してください。作業はDoqueDBのソース環境で行います。
+1. 以下を用意してください。作業はDoqueDBのソース環境で行います。  
 詳細についてはDoqueDBの
 [BUILDING_PROCEDURE_ja.md](https://github.com/DoqueDB/doquedb/blob/master/BUILDING_PROCEDURE_ja.md)
 を参照してください。
