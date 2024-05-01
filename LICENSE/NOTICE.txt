@@ -1,0 +1,22 @@
+LICENSE/NOTICE.txt
+Ricoh Company, Ltd.
+May 1, 2024
+
+This folder contains copyright and license information for third-party
+software in the repository.
+
+SudachiDict
+    Copyrights and Licenses:
+        Copyright (c) 2017, 2024 Works Applications Co., Ltd.
+        Distributed under Apache License 2.0
+
+    URLs:
+        https://github.com/WorksApplications/SudachiDict/
+
+    Included Files:
+        LICENSE/SudachiDict/LICENSE.txt
+        LICENSE/SudachiDict/LICENSE-2.0.txt
+        LICENSE/SudachiDict/synonyms.txt (v20240408)
+        (Regardless of what LICENSE.txt states, synonyms.txt does not
+         contain materials derived from Unidic and NEologd.)
+
